@@ -10,8 +10,7 @@ require('dotenv').config({
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors);
-
+app.use(cors());
 
 massive(process.env.DB_CONNECTION_STRING)
   .then(dbInstance => {
