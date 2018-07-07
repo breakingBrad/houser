@@ -21,6 +21,8 @@ massive(process.env.DB_CONNECTION_STRING)
     console.warn(err);
   });
 
+app.get('/api/houses', controller.getHouses)
+
 
 app.get('/', (req, res) => {
   res.send('I live to Serve.');
