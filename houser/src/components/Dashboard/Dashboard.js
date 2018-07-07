@@ -21,6 +21,17 @@ class Dashboard extends Component {
       })
   }
 
+  deleteHouse = (e, id) => {
+    console.log(`Removing House Id: ${id}`)
+    axios.delete(`/api/houses/${id}`)
+      .then(response => {
+        this.fetchHouses();
+      })
+      .catch(err => {
+        console.log(err)
+      });
+  }
+
   componentDidMount() {
     this.fetchHouses();
   }
@@ -29,7 +40,8 @@ class Dashboard extends Component {
     const houses = this.state.houses
       .map((house, i) => (
         <House
-          {...house} />
+          {...house}
+          deleteHouse={this.deleteHouse} />
       ))
     return (
       <div>

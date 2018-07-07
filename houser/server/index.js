@@ -22,6 +22,9 @@ massive(process.env.DB_CONNECTION_STRING)
   });
 
 app.get('/api/houses', controller.getHouses)
+app.post('/api/houses', controller.addHouse)
+app.delete('/api/houses/:id', controller.deleteHouse)
+
 
 
 app.get('/', (req, res) => {
