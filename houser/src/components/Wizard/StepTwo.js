@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { stepTwoBuilder } from '../../ducks/reducer'
 
 class StepTwo extends Component {
   constructor() {
@@ -16,6 +18,7 @@ class StepTwo extends Component {
   }
 
   render() {
+    const { stepTwoBuilder } = this.props;
     return (
       <div>
         <p>Image URL</p>
@@ -31,6 +34,7 @@ class StepTwo extends Component {
         <Link to="/wizard/step3">
           <button type="submit"
             className="step-button"
+            onClick={() => stepTwoBuilder(this.state.img)}
           >
             Next Step
             </button>
@@ -39,5 +43,8 @@ class StepTwo extends Component {
     )
   }
 }
+const mapStateToProps = (state) => ({
+  img: state.img,
+});
 
-export default StepTwo; 
+export default connect(mapStateToProps, { stepTwoBuilder })(StepTwo); 
