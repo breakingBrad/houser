@@ -14,7 +14,7 @@ module.exports = {
   addHouse: (req, res, next) => {
     const dbInstance = req.app.get('db');
     const { name, address, city, state, zip } = req.body;
-    console.log(name, address, city, state, zip);
+    console.log(`name:` + name, ` address:` + address, ` city:` + city, ` state:` + state, ` zip:` + zip);
     dbInstance.insert_house([name, address, city, state, zip])
       .then(houses => res.status(201).json(houses))
       .catch(err => {

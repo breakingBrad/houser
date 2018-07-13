@@ -12,7 +12,7 @@ class Dashboard extends Component {
   }
 
   fetchHouses() {
-    axios.get(`api/houses`)
+    axios.get(`/api/houses`)
       .then((res) => {
         console.log(res);
         this.setState({
