@@ -14,6 +14,7 @@ module.exports = {
   addHouse: (req, res, next) => {
     const dbInstance = req.app.get('db');
     const { name, address, city, state, zip, img, mortgage, rent } = req.body;
+    console.log(`Adding House with the following properties...`)
     console.log(req.body);
     dbInstance.insert_house([name, address, city, state, zip, img, mortgage, rent])
       .then(houses => res.status(201).json(houses))

@@ -1,3 +1,11 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #AFD4C0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
 .App {
   text-align: center;
 }
@@ -22,7 +30,16 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.house-container{
+  display: flex;
+  justify-content: space-around;
+  background-color: #dedede;
+  margin-bottom: 20px;
+}
+.house-container p{
+  margin: 5px
+}
+.house-img{
+  width: 175px;
+  height: 130px;
 }

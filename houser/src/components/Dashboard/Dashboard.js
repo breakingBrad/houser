@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import House from '../House/House';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { resetState } from '../../ducks/reducer'
 import axios from 'axios';
 
 class Dashboard extends Component {
@@ -8,6 +10,14 @@ class Dashboard extends Component {
     super();
     this.state = {
       houses: [],
+      name: '',
+      address: '',
+      city: '',
+      state: '',
+      zip: '',
+      img: '',
+      mortgage: '',
+      rent: '',
     }
   }
 
@@ -34,13 +44,25 @@ class Dashboard extends Component {
 
   componentDidMount() {
     this.fetchHouses();
+    this.setState({
+      name: '',
+      address: '',
+      city: '',
+      state: '',
+      zip: '',
+      img: '',
+      mortgage: '',
+      rent: '',
+    })
   }
 
   render() {
+    const { resetState } = this.props;
     const houses = this.state.houses
-      .map((house, i) => (
+      .map((house, id) => (
         <House
           {...house}
+          key={id}
           deleteHouse={this.deleteHouse} />
       ))
     return (
@@ -48,7 +70,7 @@ class Dashboard extends Component {
         Dashboard
         <br />
         <Link to="/wizard/step1">
-          <button type="submit">
+          <button type="submit" onClick={() => resetState(this.state.name, this.state.address, this.state.city, this.state.state, this.state.zip, this.state.img, this.state.mortgage, this.state.rent)}>
             Add New Property
           </button>
         </Link>
@@ -58,4 +80,15 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard; 
+const mapStateToProps = (state) => ({
+  name: state.name,
+  address: state.address,
+  city: state.city,
+  state: state.state,
+  zip: state.zip,
+  img: state.img,
+  mortgage: state.mortgage,
+  rent: state.rent,
+});
+
+export default connect(mapStateToProps, { resetState })(Dashboard);

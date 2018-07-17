@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { stepTwoBuilder } from '../../ducks/reducer'
 
 class StepTwo extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       img: ''
     }
@@ -17,12 +17,18 @@ class StepTwo extends Component {
 
   }
 
+  componentWillMount() {
+    this.setState({
+      img: this.props.img
+    })
+  }
+
   render() {
     const { stepTwoBuilder } = this.props;
     return (
       <div>
         <p>Image URL</p>
-        <input className="input-line" type="text" name="img" onChange={this.handleChange} />
+        <input className="input-line" type="text" name="img" onChange={this.handleChange} value={this.state.img} />
         <br />
         <Link to="/wizard/step1">
           <button type="submit"

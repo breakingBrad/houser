@@ -11,11 +11,10 @@ class StepThree extends Component {
       name: props.name,
       address: props.address,
       city: props.city,
-      state: props.state,
       zip: props.zip,
       img: props.img,
-      mortgage: '',
-      rent: '',
+      mortgage: props.mortgage,
+      rent: props.rent,
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,8 +30,23 @@ class StepThree extends Component {
     this.addHouse();
   }
 
+  componentWillMount() {
+    this.setState({
+      name: this.props.name,
+      address: this.props.address,
+      city: this.props.city,
+      state: this.props.state,
+      zip: this.props.zip,
+      img: this.props.img,
+      mortgage: this.props.mortgage,
+      rent: this.props.rent
+    })
+  }
+
   addHouse() {
-    axios.post(`/api/houses`, this.state)
+    const newHouse = this.state
+    console.log(newHouse);
+    axios.post(`/api/houses`, newHouse)
       .then(response => {
         this.props.history.push('/');
       })
@@ -46,10 +60,10 @@ class StepThree extends Component {
       <div>
         <p>Recommended Rent: ${!this.state.mortgage == '' ? this.state.mortgage * 1.25 : 0} </p>
         <p>Monthly Mortgage Amount</p>
-        <input className="input-line" type="number" name="mortgage" onChange={this.handleChange} placeholder="0" />
+        <input className="input-line" type="number" name="mortgage" onChange={this.handleChange} placeholder="0" value={this.state.mortage} />
         <br />
         <p>Desired Monthly Rent</p>
-        <input className="input-line" type="number" name="rent" onChange={this.handleChange} placeholder="0" />
+        <input className="input-line" type="number" name="rent" onChange={this.handleChange} placeholder="0" value={this.state.rent} />
         <br />
         <Link to="/wizard/step2">
           <button type="submit"

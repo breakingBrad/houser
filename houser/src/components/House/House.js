@@ -1,16 +1,26 @@
 import React from 'react';
 
-function House({ id, name, address, city, state, zip, deleteHouse }) {
+function House(props) {
   return (
-    <div className="house-details">
-      <p>Property Name:   {name}</p>
-      <p>Address:         {address}</p>
-      <p>City:            {city}</p>
-      <p>State:           {state}</p>
-      <p>Zip:             {zip}</p>
-      <button className="delete-button" onClick={e => deleteHouse(e, id)}>
-        Delete
+    <div className="house-container">
+      <div><img className="house-img" src={props.img} alt="house" />></div>
+      <div className="house-details">
+        <p>Property Name:   {props.name}</p>
+        <p>Address:         {props.address}</p>
+        <p>City:            {props.city}</p>
+        <p>State:           {props.state}</p>
+        <p>Zip:             {props.zip}</p>
+      </div>
+      <div className="price-details">
+        <p>Monthly Mortgage: {props.mortgage}</p>
+        <p>Desired Rent: {props.rent}</p>
+      </div>
+      <div className="button-container">
+        <button className="delete-button" onClick={e => props.deleteHouse(e, props.id)}>
+          Delete
       </button>
+      </div>
+
     </div>
   )
 }
