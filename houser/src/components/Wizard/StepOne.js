@@ -35,21 +35,23 @@ class StepOne extends Component {
     const { stepOneBuilder } = this.props;
     return (
       <div wizard-container>
-        <p>Property Name</p>
-        <input className="input-line" type="text" name="name" onChange={this.handleChange} value={this.state.name} />
-        <br />
-        <p>Address</p>
-        <input className="input-line" type="text" name="address" onChange={this.handleChange} value={this.state.address} />
-        <br />
-        <p>City</p>
-        <input className="input-line" type="text" name="city" onChange={this.handleChange} value={this.state.city} />
-        <p>State</p>
-        <input
-          className="input-line" type="text" name="state" onChange={this.handleChange} maxLength="2" value={this.state.state} />
-        <br />
-        <p>Zip</p>
-        <input className="input-line" type="number" name="zip" onChange={this.handleChange} placeholder="0" value={this.state.zip} />
-        <br />
+        <div className="input-container">
+          <p>Property Name</p>
+          <input className="input-line" type="text" name="name" onChange={this.handleChange} value={this.state.name} />
+          <br />
+          <p>Address</p>
+          <input className="input-line" type="text" name="address" onChange={this.handleChange} value={this.state.address} />
+          <br />
+          <p>City</p>
+          <input className="input-line" type="text" name="city" onChange={this.handleChange} value={this.state.city} />
+          <p>State</p>
+          <input
+            className="input-line" type="text" name="state" onChange={this.handleChange} maxLength="2" value={this.state.state} />
+          <br />
+          <p>Zip</p>
+          <input className="input-line" type="number" name="zip" onChange={this.handleChange} placeholder="0" value={this.state.zip} />
+          <br />
+        </div>
         <Link to="/wizard/step2">
           <button type="submit"
             className="step-button"

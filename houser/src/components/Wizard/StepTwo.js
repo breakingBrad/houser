@@ -27,9 +27,11 @@ class StepTwo extends Component {
     const { stepTwoBuilder } = this.props;
     return (
       <div>
-        <p>Image URL</p>
-        <input className="input-line" type="text" name="img" onChange={this.handleChange} value={this.state.img} />
-        <br />
+        <div className="input-container">
+          <p>Image URL</p>
+          <input className="input-line" type="text" name="img" onChange={this.handleChange} value={this.state.img} />
+          <br />
+        </div>
         <Link to="/wizard/step1">
           <button type="submit"
             className="step-button"
@@ -37,6 +39,7 @@ class StepTwo extends Component {
             Previous Step
             </button>
         </Link>
+        <br /><br />
         <Link to="/wizard/step3">
           <button type="submit"
             className="step-button"

@@ -58,13 +58,17 @@ class StepThree extends Component {
   render() {
     return (
       <div>
-        <p>Recommended Rent: ${!this.state.mortgage == '' ? this.state.mortgage * 1.25 : 0} </p>
-        <p>Monthly Mortgage Amount</p>
-        <input className="input-line" type="number" name="mortgage" onChange={this.handleChange} placeholder="0" value={this.state.mortage} />
-        <br />
-        <p>Desired Monthly Rent</p>
-        <input className="input-line" type="number" name="rent" onChange={this.handleChange} placeholder="0" value={this.state.rent} />
-        <br />
+        <span className="rent-rec">
+          <p>Recommended Rent: ${!this.state.mortgage == '' ? this.state.mortgage * 1.25 : 0} </p>
+        </span>
+        <div className="input-container">
+          <p>Monthly Mortgage Amount</p>
+          <input className="input-line" type="number" name="mortgage" onChange={this.handleChange} placeholder="0" value={this.state.mortage} />
+          <br />
+          <p>Desired Monthly Rent</p>
+          <input className="input-line" type="number" name="rent" onChange={this.handleChange} placeholder="0" value={this.state.rent} />
+          <br />
+        </div>
         <Link to="/wizard/step2">
           <button type="submit"
             className="step-button"

@@ -24,6 +24,7 @@ html, body{
   height: 130px;
 }
 .house-details {
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
 }
@@ -48,6 +49,29 @@ html, body{
   margin: 20px 20px 20px 425px
 }
 
+.dashboard-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.dashboard-header h1{
+  font-weight: 400;
+  color: #3b5249;
+  font-size: 40px;
+  margin: 0;
+
+}
+
+.dashboard-container {
+  width: 50%;
+  height: 100%;
+  vertical-align: baseline;
+  background-color: #e5f4ec;
+  margin: 0 25%;
+  padding: 20px;
+}
+
 .wizard-header{
   display: flex;
   justify-content: space-between;
@@ -60,6 +84,42 @@ html, body{
   border: none;
   font-size: 15px;
   padding: 8px;
+  font-weight: bold;
+}
+.wizard-container{
+  width: 50vw;
+  background-color: #e5f4ec;
+  margin: 0 25%;
+  padding: 20px;
+  height:100%
+}
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  align-items: baseline;
+  font-weight: bold;
+}
+
+.input-container p{
+  font-weight: 500;
+}
+
+.input-line{
+  border: 1px solid #519872;
+  border-radius: 2px;
+  height: 25px;
+  width: 40%;
+  padding: 3px 2px;
+}
+
+.input-line:focus {
+  outline: none;
+}
+
+.rent-rec{
+  text-align: center;
   font-weight: bold;
 }
 
@@ -88,34 +148,17 @@ html, body{
   margin-left: 50px;
 }
 
-
-.wizard-container{
-  width: 50vw;
-  background-color: #e5f4ec;
-  margin: 0 25%;
-  padding: 20px;
-  height:100%
+.delete-button {
+  margin-right: -30px;
+  margin-left: 15px;
+  color: black;
+  float: right;
+  font-size: 15px;
+  line-height: 0px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.dashboard-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center
-}
-
-.dashboard-header h1{
-  font-weight: 400;
-  color: #3b5249;
-  font-size: 40px;
-  margin: 0;
-
-}
-
-.dashboard-container {
-  width: 50%;
-  height: 100%;
-  vertical-align: baseline;
-  background-color: #e5f4ec;
-  margin: 0 25%;
-  padding: 20px;
+.delete-button:hover {
+  font-weight: bold;
 }
