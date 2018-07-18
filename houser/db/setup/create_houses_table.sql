@@ -5,7 +5,4 @@ CREATE TABLE "houses" (
   city VARCHAR(100),
   state VARCHAR(2),
   zip INTEGER,
-  img TEXT,
-  mortgage DECIMAL,
-  RENT DECIMAL
 );

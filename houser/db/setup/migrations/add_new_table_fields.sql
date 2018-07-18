@@ -1,0 +1,5 @@
+ALTER TABLE "houses" (
+  ADD COLUMN img TEXT,
+  ADD COLUMN mortgage DECIMAL,
+  ADD COLUMN RENT DECIMAL
+)
