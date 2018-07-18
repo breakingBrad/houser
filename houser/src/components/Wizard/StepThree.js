@@ -13,8 +13,8 @@ class StepThree extends Component {
       city: props.city,
       zip: props.zip,
       img: props.img,
-      mortgage: props.mortgage,
-      rent: props.rent,
+      mortgage: 0,
+      rent: 0,
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,8 +38,8 @@ class StepThree extends Component {
       state: this.props.state,
       zip: this.props.zip,
       img: this.props.img,
-      mortgage: this.props.mortgage,
-      rent: this.props.rent
+      mortgage: 0,
+      rent: 0
     })
   }
 

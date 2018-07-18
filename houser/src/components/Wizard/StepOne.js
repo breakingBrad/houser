@@ -11,7 +11,7 @@ class StepOne extends Component {
       address: '',
       city: '',
       state: '',
-      zip: '',
+      zip: 0,
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -34,7 +34,7 @@ class StepOne extends Component {
   render() {
     const { stepOneBuilder } = this.props;
     return (
-      <div>
+      <div wizard-container>
         <p>Property Name</p>
         <input className="input-line" type="text" name="name" onChange={this.handleChange} value={this.state.name} />
         <br />

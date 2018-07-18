@@ -1,40 +1,20 @@
 
-body{
+html, body{
   margin: 0;
   padding: 0;
   background-color: #AFD4C0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
 }
 
 .house-container{
   display: flex;
   justify-content: space-around;
+  align-content: flex-start;
   background-color: #dedede;
   margin-bottom: 20px;
+  padding-top: 15px;
+  /* padding: 20px; */
 }
 .house-container p{
   margin: 5px
@@ -42,4 +22,100 @@ body{
 .house-img{
   width: 175px;
   height: 130px;
+}
+.house-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  background-color: #519872;
+  color: white;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.header h1{
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.logo{
+  width: 34px;
+  height: 28px;
+  margin: 20px 20px 20px 425px
+}
+
+.wizard-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  
+}
+.cancel-button{
+  background-color: #FEc2c2;
+  border: none;
+  font-size: 15px;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.step-button{
+  background-color: #3b5249;
+  color: white;
+  font-size: 22px;
+  padding: 10px;
+  border: none;
+  margin-left: 450px;
+}
+
+.add-property-button {
+  font-weight: bold;
+  background-color: #8aea92;
+  border: none;
+  font-size: 20px;
+}
+
+.complete-button {
+  font-weight: bold;
+  background-color: #8aea92;
+  font-size: 22px;
+  padding: 10px;
+  border: none;
+  margin-left: 50px;
+}
+
+
+.wizard-container{
+  width: 50vw;
+  background-color: #e5f4ec;
+  margin: 0 25%;
+  padding: 20px;
+  height:100%
+}
+
+.dashboard-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.dashboard-header h1{
+  font-weight: 400;
+  color: #3b5249;
+  font-size: 40px;
+  margin: 0;
+
+}
+
+.dashboard-container {
+  width: 50%;
+  height: 100%;
+  vertical-align: baseline;
+  background-color: #e5f4ec;
+  margin: 0 25%;
+  padding: 20px;
 }
